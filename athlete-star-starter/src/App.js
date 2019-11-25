@@ -17,6 +17,7 @@ export default class App extends Component <Props> {
         <CustomArrows />
         <br />
         <PreviousNextMethods />
+        
         <br />
       </div>
     );

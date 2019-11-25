@@ -9,6 +9,9 @@ class PreviousNextMethods extends Component {
     super(props);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this.state = {
+      data: [],
+    };
   }
   next() {
     this.slider.slickNext();
@@ -21,12 +24,12 @@ class PreviousNextMethods extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1
     };
     return (
       <div>
-        <h2>Players</h2>
+        <h2>Basketball</h2>
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
             <Players />
@@ -38,7 +41,7 @@ class PreviousNextMethods extends Component {
             <Players />
           </div>
           <div key={4}>
-            <h3>4</h3>
+            <Players />
           </div>
           <div key={5}>
             <h3>5</h3>
