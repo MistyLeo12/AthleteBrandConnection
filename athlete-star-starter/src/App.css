@@ -17,15 +17,26 @@
   color: white;
 }
 
+.Form-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
 .App-link {
   color: #09d3ac;
 }
 
 .Cards-style {
-    color: #09d3ac;
-    width: 145;
-    height: 100;
-  }
+  color: #09d3ac;
+  width: 145;
+  height: 100;
+}
 
 .our-team {
   padding: 0px 0px 0px;
