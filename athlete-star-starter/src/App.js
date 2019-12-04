@@ -6,6 +6,7 @@ import { MultipleItems } from './MultipleItems';
 import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
 import './App.css';
+import fire from './fire';
 
 
 export default class App extends Component <Props> {
