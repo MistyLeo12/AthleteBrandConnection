@@ -4,6 +4,7 @@ import logo from './Tre_Jones.jpg';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 class Players extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class Players extends Component {
       <div className="container">
         <div className="row">
           <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                      <Link to="/">
       <Paper>
         <Card className="our-team">
           <CardActionArea className="picture">
@@ -51,6 +53,7 @@ class Players extends Component {
           </CardActions>
         </Card>
       </Paper>
+                        </Link>
       </div>
       </div>
       </div>
