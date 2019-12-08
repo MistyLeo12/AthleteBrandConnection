@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import firebase from "firebase";
+import { StyledFirebaseAuth } from "react-firebaseui/StyledFirebaseAuth";
 import { NavBar } from './NavBar';
 import { Cards } from './Cards';
 import { MultipleItems } from './MultipleItems';
