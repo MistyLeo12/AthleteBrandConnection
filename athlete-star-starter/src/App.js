@@ -41,9 +41,6 @@ export default class App extends Component <Props> {
       <div className="App">
         <NavBar />
         <br />
-        <CustomArrows />
-        <br />
-        <PreviousNextMethods />
         <br />
         {this.state.isSignedIn ?
           <span>
@@ -51,6 +48,9 @@ export default class App extends Component <Props> {
             <button onClick={() => firebase.auth().signOut()}>Sign out</button>
             <h1>Welcome {firebase.auth().currentUser.displayname}</h1>
             <img alt="profile pic" src={firebase.auth().currentUser.photoURL} />
+            <CustomArrows />
+            <br />
+            <PreviousNextMethods />
           </span>
           :
         (
