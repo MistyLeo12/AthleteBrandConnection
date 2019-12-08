@@ -3,8 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
-import Players from './Players';
 import logo from './Tre_Jones.jpg';
+import { Link } from "react-router-dom";
 
 class PreviousNextMethods extends Component {
   constructor(props) {
@@ -34,6 +34,7 @@ class PreviousNextMethods extends Component {
         <h2>Basketball</h2>
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
+            <Link to="/athletes">
             <Paper>
               <Card className="our-team">
                 <CardActionArea className="picture">
@@ -64,6 +65,7 @@ class PreviousNextMethods extends Component {
                 </CardActions>
               </Card>
             </Paper>
+            </Link>
           </div>
           <div key={2}>
             2
