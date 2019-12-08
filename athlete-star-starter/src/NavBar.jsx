@@ -6,6 +6,10 @@ import { Avatar, Typography, Toolbar, Grid, Button, AppBar, SwipeableDrawer, Ico
 import { MailIcon, AccountCircle, InboxIcon } from '@material-ui/icons/';
 import PropTypes from 'prop-types';
 import MenuIcon from '@material-ui/icons/Menu/';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import TypoGraphy from '@material-ui/core/Typography'
+import { Home, Book, AccountBox } from '@material-ui/icons'
 
 class NavBar extends Component {
     state = {
@@ -34,7 +38,33 @@ class NavBar extends Component {
             <Typography variant="h6">
             NCAA Athlete Brand Network
             </Typography>
-            <Button color="inherit">Login</Button>
+            <List component="nav">
+            <ListItem component="div" >
+                <ListItemText inset>
+                    <TypoGraphy color="inherit" variant="title">
+                    <Button color="inherit" component={Link} to="/"> Home </Button>
+                    </TypoGraphy>
+                </ListItemText>
+
+                <ListItemText inset>
+                    <TypoGraphy color="inherit" variant="title">
+                    <Button color="inherit" component={Link} to="/schools"> Schools </Button>
+                    </TypoGraphy>
+                </ListItemText>
+
+                <ListItemText inset>
+                    <TypoGraphy color="inherit" variant="title">
+                    <Button color="inherit" component={Link} to="/athletes" > Athletes </Button>
+                    </TypoGraphy>
+                </ListItemText>
+
+                <ListItemText inset>
+                    <TypoGraphy color="inherit" variant="title">
+                    <Button color="inherit" component={Link} to="/">Login</Button>
+                    </TypoGraphy>
+                </ListItemText>
+            </ListItem >
+            </List>
             </Toolbar>
           </AppBar>
         </div>
