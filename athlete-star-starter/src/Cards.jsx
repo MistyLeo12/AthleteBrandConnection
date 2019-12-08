@@ -4,6 +4,7 @@ import logo from './Duke-Basketball-logo.png';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 class Cards extends Component {
   constructor() {
@@ -18,6 +19,7 @@ class Cards extends Component {
 
   render() {
     return (
+      <Link to="/cards">
       <Paper>
         <Card className="our-team">
           <CardActionArea className="university">
@@ -47,6 +49,7 @@ class Cards extends Component {
           </CardActions>
         </Card>
       </Paper>
+      </Link>
     );
   }
 }

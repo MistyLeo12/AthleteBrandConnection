@@ -3,25 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Cards } from './Cards';
+import { Players } from './Players';
+import { NavBar } from './NavBar';
+import { CustomArrows } from './CustomArrows';
+import { PreviousNextMethods } from './PreviousNextMethods';
 import * as serviceWorker from './serviceWorker';
 
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 const routing = (
   <Router>
-    <div>
-        <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/cards">Users</Link>
-        </li>
-      </ul>
-      <Route path="/cards" component={App} />
-      <Route path="/" component={Cards} />
-    </div>
-  </Router>
+  <div>
+    <NavBar />
+    <Switch>
+        <Route exact path='/' component={App} />
+        <Route path='/schools' component={CustomArrows} />
+        <Route path='/athletes' component={PreviousNextMethods} />
+    </Switch>
+  </div>
+</Router>
 )
 
 ReactDOM.render(routing, document.getElementById('root'));
