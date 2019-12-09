@@ -22,10 +22,10 @@
 }
 
 .Cards-style {
-    color: #09d3ac;
-    width: 145;
-    height: 100;
-  }
+  color: #09d3ac;
+  width: 145;
+  height: 100;
+}
 
 .our-team {
   padding: 0px 0px 0px;
@@ -180,4 +180,120 @@
 .our-team .social li a:hover {
   color: #1369ce;
   background-color: #f7f5ec;
+}
+
+.our-player {
+  text-align: center;
+  position: relative;
+  background-image: url("./CoverPic.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 50vh;
+  z-index: 10;
+}
+
+.our-player .person {
+  display: inline-block;
+  height: 200px;
+  width: 225px;
+  margin-bottom: 100px;
+  z-index: 1;
+  position: relative;
+}
+
+.our-player .person::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-player:hover .person::before {
+  height: 100%;
+}
+
+.our-player .person img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-player:hover .person img {
+  box-shadow: 0 0 0 14px blue;
+  transform: scale(0.9);
+}
+
+.our-player .picture {
+  display: inline-block;
+  height: 400px;
+  width: 300px;
+  margin-bottom: 100px;
+  z-index: 1;
+  position: relative;
+}
+
+.our-player .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-player:hover .picture::before {
+  height: 100%;
+}
+
+.our-player .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.our-player .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-player:hover .picture img {
+  box-shadow: 0 0 0 14px white;
+  transform: scale(0.7);
+}
+
+#backGround {
+  background-image: url("./CoverPic.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 50vh;
+  z-index: -10;
 }
