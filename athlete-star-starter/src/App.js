@@ -45,7 +45,7 @@ export default class App extends Component <Props> {
           <span>
             <div> Signed In </div>
             <button onClick={() => firebase.auth().signOut()}>Sign out</button>
-            <h1>Welcome {firebase.auth().currentUser.displayname}</h1>
+            <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
             <img alt="profile pic" src={firebase.auth().currentUser.photoURL} />
             <CustomArrows />
             <br />

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // material-ui
 import { withStyles } from '@material-ui/core/styles'
-import { Avatar, Typography, Toolbar, Grid, Button, AppBar, SwipeableDrawer, IconButton, List, Divider, ListItem, ListItemIcon, ListItemText} from '@material-ui/core/';
+import { CardMedia, Avatar, Typography, Toolbar, Grid, Button, AppBar, SwipeableDrawer, IconButton, List, Divider, ListItem, ListItemIcon, ListItemText} from '@material-ui/core/';
 import { MailIcon, AccountCircle, InboxIcon } from '@material-ui/icons/';
 import PropTypes from 'prop-types';
 import MenuIcon from '@material-ui/icons/Menu/';
@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import TypoGraphy from '@material-ui/core/Typography'
 import { Home, Book, AccountBox } from '@material-ui/icons'
+import logo from './ncaalogo.png'
 
 class NavBar extends Component {
     state = {
@@ -30,13 +31,16 @@ class NavBar extends Component {
     const { user, classes, logout } = this.props;
     return (
       <div>
-      <AppBar position="static">
+      <AppBar style={{ background: '#2E3B55' }} position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
             </IconButton>
+            <img src={logo} height="50" width="50" />
+            &nbsp;
+            &nbsp;
             <Typography variant="h6">
-            NCAA Athlete Brand Network
+              Athlete Brand Network
             </Typography>
             <List component="nav">
             <ListItem component="div" >
