@@ -41,14 +41,6 @@ export default class App extends Component <Props> {
     return (
       <div className="App">
         <br />
-<<<<<<< HEAD
-=======
-        <CustomArrows />
-        <br />
-        <PreviousNextMethods />
-        
->>>>>>> 278782db279da2690fe9548aed8dd0565a1e39c8
-        <br />
         {this.state.isSignedIn ?
           <span>
             <div> Signed In </div>
