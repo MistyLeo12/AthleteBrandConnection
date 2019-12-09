@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { Cards } from './Cards';
+import { Link } from 'react-router-dom';
+import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
+import logo from './Duke-Basketball-logo.png';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -40,13 +43,43 @@ class CustomArrows extends Component {
         <SamplePrevArrow />
         <Slider {...settings}>
           <div>
-            <Cards />
+            <Link to="/university">
+            <Paper>
+        <Card className="our-team">
+          <CardActionArea className="university">
+            <CardMedia
+            component="img"
+            className = "img-fluid"
+            image = { logo }
+            title="University Logo"
+            />
+            <br />
+            <CardContent className="team-content">
+              <Typography className="name" gutterBottom variant="h5" component="h2">
+              Duke University
+              </Typography>
+              <Typography className="title" variant="body2" color="textSecondary" component="p">
+              Duke University Athletics
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions className="social">
+            <Button className="" size="small" color="primary">
+            Share
+            </Button>
+            <Button size="small" color="primary">
+            Open Profile
+            </Button>
+          </CardActions>
+        </Card>
+      </Paper>
+            </Link>
           </div>
           <div>
-            <Cards />
+            2
           </div>
           <div>
-            <Cards />
+            3
           </div>
           <div>
             <h3>4</h3>

@@ -4,10 +4,11 @@ import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { NavBar } from './NavBar';
 import { Cards } from './Cards';
-import { MultipleItems } from './MultipleItems';
 import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import fire from './fire';
 
 
 firebase.initializeApp({
@@ -39,8 +40,14 @@ export default class App extends Component <Props> {
   render () {
     return (
       <div className="App">
-        <NavBar />
         <br />
+<<<<<<< HEAD
+=======
+        <CustomArrows />
+        <br />
+        <PreviousNextMethods />
+        
+>>>>>>> 278782db279da2690fe9548aed8dd0565a1e39c8
         <br />
         {this.state.isSignedIn ?
           <span>
