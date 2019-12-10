@@ -14,6 +14,8 @@ import {
   CardContent
 } from "@material-ui/core/";
 import "./App.css";
+import { db } from "./fire";
+import firebase from "firebase";
 
 import CommentList from "./components/CommentList";
 import CommentForm from "./components/CommentForm";
@@ -35,17 +37,29 @@ class Reviews extends Component {
     this.setState({ loading: true });
 
     // get all the comments
-    fetch("http://localhost:7777")
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          comments: res,
-          loading: false
+    db.collection("Reviews")
+      .where("athleteReference", "==", true)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
         });
       })
-      .catch(err => {
-        this.setState({ loading: false });
+      .catch(function(error) {
+        console.log("Error getting documents: ", error);
       });
+    // fetch("http://localhost:7777")
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     this.setState({
+    //       comments: res,
+    //       loading: false
+    //     });
+    //   })
+    //   .catch(err => {
+    //     this.setState({ loading: false });
+    //   });
   }
 
   /**

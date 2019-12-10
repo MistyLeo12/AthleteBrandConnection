@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { db } from "../fire";
+import firebase from "firebase";
 export default class CommentForm extends Component {
   constructor(props) {
     super(props);
@@ -47,35 +48,78 @@ export default class CommentForm extends Component {
 
     // loading status and clear error
     this.setState({ error: "", loading: true });
+    let { comment } = this.state;
+    var athleteid = db
+      .collection("Reviews")
+      .where("athleteReference", "==", "Jack White")
+      .get();
+    athleteid.then(function(result) {
+      db.collection("Reviews")
+        .doc(result)
+        .collection("review")
+        .add({
+          name: comment.name,
+          content: comment.message,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID:", docRef.id);
+        })
+        .catch(function(error) {
+          console.error("Error adding document:", error);
+        });
+    });
+    // (async function() {
+    //   var result = await athleteid;
+    //   console.log("Woo done!", result);
+    // })();
 
     // persist the comments on server
-    let { comment } = this.state;
-    fetch("http://localhost:7777", {
-      method: "post",
-      body: JSON.stringify(comment)
-    })
-      .then(res => res.json())
-      .then(res => {
-        if (res.error) {
-          this.setState({ loading: false, error: res.error });
-        } else {
-          // add time return from api and push comment to parent state
-          comment.time = res.time;
-          this.props.addComment(comment);
+    //let { comment } = this.state;
+    // db.collection("Reviews")
+    //   .doc(athleteid)
+    //   .collection("review")
+    //   .add({
+    //     name: comment.name,
+    //     content: comment.message,
+    //     timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    //   })
+    //   .then(function(docRef) {
+    //     console.log("Document written with ID:", docRef.id);
+    //   })
+    //   .catch(function(error) {
+    //     console.error("Error adding document:", error);
+    //   });
+    this.setState({
+      loading: false,
+      comment: { ...comment, message: "" }
+    });
+    // fetch("http://localhost:7777", {
+    //   method: "post",
+    //   body: JSON.stringify(comment)
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     if (res.error) {
+    //       this.setState({ loading: false, error: res.error });
+    //     } else {
+    //       // add time return from api and push comment to parent state
+    //       comment.time = res.time;
+    //       this.props.addComment(comment);
 
-          // clear the message box
-          this.setState({
-            loading: false,
-            comment: { ...comment, message: "" }
-          });
-        }
-      })
-      .catch(err => {
-        this.setState({
-          error: "Something went wrong while submitting form.",
-          loading: false
-        });
-      });
+    //       // clear the message box
+    // this.setState({
+    //   loading: false,
+    //   comment: { ...comment, message: "" }
+    // });
+    //     }
+    //   })
+    // .catch(err => {
+    //   this.setState({
+    //     error: "Something went wrong while submitting form.",
+    //     loading: false
+    //   });
+    // });
   }
 
   /**
