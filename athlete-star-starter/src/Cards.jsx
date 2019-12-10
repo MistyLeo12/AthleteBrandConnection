@@ -4,12 +4,8 @@ import logo from './Duke-Basketball-logo.png';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-<<<<<<< HEAD
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-=======
-import { storage } from './fire'
 import { db } from "./fire"
->>>>>>> firebase-connection
 
 class Cards extends Component {
   constructor() {
