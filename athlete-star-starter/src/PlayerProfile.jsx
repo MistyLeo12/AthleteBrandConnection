@@ -28,11 +28,10 @@ const MyReviewButton = styled(Button)({
 });
 
 const MyButton = styled(Button)({
-  background: "linear-gradient(45deg, blue, #FF8E53 90%)",
   border: 5,
   borderRadius: 5,
-  boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-  color: "white",
+  boxShadow: "0 4px 5px 2px rgba(125, 105, 135, .3)",
+  color: "black",
   height: 60,
   margin: 8,
   padding: "4 30px"
