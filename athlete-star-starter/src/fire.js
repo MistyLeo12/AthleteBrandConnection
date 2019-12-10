@@ -1,5 +1,4 @@
 import firebase from 'firebase'
-import 'firebase/storage';
 
 firebase.initializeApp({
     apiKey: "AIzaSyDy1LlgOmltOLOjfsisTBWuKH9XrCfWMa4",
@@ -12,9 +11,5 @@ firebase.initializeApp({
     measurementId: "G-QWJLD6YH8F"
   });
 
-  const storage = firebase.storage().ref();
   const db = firebase.firestore();
-
-
-  export { storage };
   export { db };
