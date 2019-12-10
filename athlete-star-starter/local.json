@@ -1,0 +1,14 @@
+{
+  "Alabama" : {
+    "schoolPic": "./pictures/schools/alabama-logo.png"
+  },
+  "Duke" : {
+    "schoolPic": "./pictures/schools/duke-logo.png"
+  },
+  "NotreDame" : {
+    "schoolPic": "./pictures/schools/notre-dame-logo.png"
+  },
+  "Oregon" : {
+    "schoolPic": "./pictures/schools/oregon-logo.png"
+  }
+}

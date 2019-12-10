@@ -48,7 +48,7 @@ class Cards extends Component {
             <CardMedia
             component="img"
             className = "img-fluid"
-            image = { images }
+            image = { schools.picture }
             title="University Logo"
             />
             <br />
