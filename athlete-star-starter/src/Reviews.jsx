@@ -80,7 +80,7 @@ class Reviews extends Component {
           <h2>Please leave a review if you enjoyed my services!</h2>
         </header>
         <div className="col-4  pt-3 border-right">
-          <h4>Review Form:</h4>
+          <h4>Review Form</h4>
           <CommentForm addComment={this.addComment} />
 
           <div className="col-8  pt-3 bg-white">
