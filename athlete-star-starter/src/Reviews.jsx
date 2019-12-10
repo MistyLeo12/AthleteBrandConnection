@@ -1,6 +1,18 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React, { Component, Fragment } from "react";
+import logo from "./Tre_Jones.jpg";
 //import "bootstrap/dist/css/bootstrap.css";
+import { styled } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import {
+  Paper,
+  Image,
+  Typography,
+  Card,
+  CardActions,
+  CardMedia,
+  CardActionArea,
+  CardContent
+} from "@material-ui/core/";
 import "./App.css";
 
 import CommentList from "./components/CommentList";
@@ -50,29 +62,7 @@ class Reviews extends Component {
   render() {
     const loadingSpin = this.state.loading ? "App-logo Spin" : "App-logo";
     return (
-      <div className="App container bg-light shadow">
-        <header className="Form-header">
-          <h1 className="App-title">
-            Player Review
-            <span className="px-2" role="img" aria-label="Chat">
-              💬
-            </span>
-          </h1>
-          <p>Leave a review if you liked my page!</p>
-        </header>
-
-        <div className="row">
-          <div className="col-4  pt-3 border-right">
-            <h6>Review Form</h6>
-            <CommentForm addComment={this.addComment} />
-          </div>
-          <div className="col-8  pt-3 bg-white">
-            <CommentList
-              loading={this.state.loading}
-              comments={this.state.comments}
-            />
-          </div>
-        </div>
+      <Fragment>
         <div className="container">
           <Card className="our-player">
             <CardActionArea className="person">
@@ -82,11 +72,25 @@ class Reviews extends Component {
                 image={logo}
                 title="University Logo"
               />
-              <br />
             </CardActionArea>
           </Card>
         </div>
-      </div>
+        <header className="Form-header">
+          <h1 className="App-title">Tre Jones #3</h1>
+          <h2>Please leave a review if you enjoyed my services!</h2>
+        </header>
+        <div className="col-4  pt-3 border-right">
+          <h4>Review Form:</h4>
+          <CommentForm addComment={this.addComment} />
+
+          <div className="col-8  pt-3 bg-white">
+            <CommentList
+              loading={this.state.loading}
+              comments={this.state.comments}
+            />
+          </div>
+        </div>
+      </Fragment>
     );
   }
 }

@@ -94,7 +94,7 @@ export default class CommentForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <form method="post" onSubmit={this.onSubmit}>
+        <form className="border-css" method="post" onSubmit={this.onSubmit}>
           <div className="form-group">
             <input
               onChange={this.handleFieldChange}

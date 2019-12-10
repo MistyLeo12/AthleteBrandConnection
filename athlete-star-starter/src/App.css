@@ -1,6 +1,15 @@
 .App {
   text-align: center;
 }
+.border-css {
+  height: 150px;
+  margin-left: 320px;
+  margin-right: 320px;
+  padding: 2%;
+  font-size: 1.2em;
+  border: solid 4px navy;
+  position: relative;
+}
 
 .App-logo {
   height: 40vmin;
@@ -183,14 +192,14 @@
 }
 
 .our-player {
+  background-image: url("./ReviewCover_.jpg");
   text-align: center;
   position: relative;
-  background-image: url("./CoverPic.jpg");
   background-size: cover;
   background-position: center center;
   position: relative;
   top: 0;
-  bottom: 0;
+  bottom: 50;
   height: 50vh;
   z-index: 10;
 }
@@ -239,7 +248,7 @@
   display: inline-block;
   height: 400px;
   width: 300px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   z-index: 1;
   position: relative;
 }
@@ -288,7 +297,7 @@
 }
 
 #backGround {
-  background-image: url("./CoverPic.jpg");
+  background-image: url("./ReviewCover_.jpg");
   background-size: cover;
   background-position: center center;
   position: relative;
