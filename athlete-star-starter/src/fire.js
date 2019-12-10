@@ -1,5 +1,7 @@
 import firebase from 'firebase'
-const firebaseConfig = {
+import 'firebase/storage';
+
+firebase.initializeApp({
     apiKey: "AIzaSyDy1LlgOmltOLOjfsisTBWuKH9XrCfWMa4",
     authDomain: "athlete-market.firebaseapp.com",
     databaseURL: "https://athlete-market.firebaseio.com",
@@ -8,4 +10,11 @@ const firebaseConfig = {
     messagingSenderId: "370761758459",
     appId: "1:370761758459:web:7e7a74d2d292b61ac6a25e",
     measurementId: "G-QWJLD6YH8F"
-  };
+  });
+
+  const storage = firebase.storage().ref();
+  const db = firebase.firestore();
+
+
+  export { storage };
+  export { db };
