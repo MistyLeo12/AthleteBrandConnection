@@ -82,13 +82,13 @@ class CustomArrows extends Component {
             3
           </div>
           <div>
-            <h3>4</h3>
+            <Cards />
           </div>
           <div>
-            <h3>5</h3>
+            <Cards />
           </div>
           <div>
-            <h3>6</h3>
+            <Cards />
           </div>
         </Slider>
         <SampleNextArrow />

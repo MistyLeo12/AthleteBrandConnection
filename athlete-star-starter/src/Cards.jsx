@@ -4,39 +4,68 @@ import logo from './Duke-Basketball-logo.png';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+<<<<<<< HEAD
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+=======
+import { storage } from './fire'
+import { db } from "./fire"
+>>>>>>> firebase-connection
 
 class Cards extends Component {
   constructor() {
     super();
 
     this.state = {
-      data: [],
+      
+      schools: [],
+      image: [],
       page: 0,
       rowsPerPage: 10
-    };
+    }
   }
 
+
+  
+  componentDidMount() {
+    db.collection("Schools")
+      .get()
+      .then(querySnapshot => {
+        const data = querySnapshot.docs.map(doc => doc.data());
+        console.log(data);
+        this.setState({ schools: data });
+      });
+
+  }
+
+
   render() {
+    const { schools } = this.state;
+    var { images } = (`/pictures/schools/${schools.picture}.png`);
+    console.log(schools.picture);
     return (
+  
+     
       <Paper>
+        {schools.map(school=>(
         <Card className="our-team">
           <CardActionArea className="university">
             <CardMedia
             component="img"
             className = "img-fluid"
-            image = { logo }
+            image = { images }
             title="University Logo"
             />
             <br />
             <CardContent className="team-content">
-              <Typography className="name" gutterBottom variant="h5" component="h2">
-              Duke University
+         
+            <Typography className="name" gutterBottom variant="h5" component="h2">
+             
               </Typography>
               <Typography className="title" variant="body2" color="textSecondary" component="p">
-              Duke University Athletics
-              </Typography>
+              {school.fullName}
+              </Typography> 
             </CardContent>
+       
           </CardActionArea>
           <CardActions className="social">
             <Button className="" size="small" color="primary">
@@ -46,7 +75,9 @@ class Cards extends Component {
             Open Profile
             </Button>
           </CardActions>
+
         </Card>
+        ))}
       </Paper>
     );
   }

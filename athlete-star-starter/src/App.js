@@ -6,10 +6,12 @@ import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import fire from './fire';
-
+import firebase from 'firebase'
 
 export default class App extends Component <Props> {
+  
+
+
   render () {
     return (
       <div className="App">
