@@ -53,7 +53,7 @@ class Reviews extends Component {
       <div className="App container bg-light shadow">
         <header className="Form-header">
           <h1 className="App-title">
-            Player Review
+            Athlete Review
             <span className="px-2" role="img" aria-label="Chat">
               💬
             </span>
