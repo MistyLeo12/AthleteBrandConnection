@@ -73,6 +73,19 @@ class Reviews extends Component {
             />
           </div>
         </div>
+        <div className="container">
+          <Card className="our-player">
+            <CardActionArea className="person">
+              <CardMedia
+                component="img"
+                className="img-fluid"
+                image={logo}
+                title="University Logo"
+              />
+              <br />
+            </CardActionArea>
+          </Card>
+        </div>
       </div>
     );
   }
