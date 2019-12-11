@@ -48,6 +48,9 @@
   overflow: hidden;
   position: relative;
 }
+.our-team .team-content {
+  background-color: 1369ce;
+}
 
 .our-team .university {
   display: inline-block;
@@ -56,6 +59,7 @@
   margin-bottom: 100px;
   z-index: 1;
   position: relative;
+  border-radius: 50%;
 }
 
 .our-team .university::before {
@@ -63,18 +67,15 @@
   width: 100%;
   height: 0;
   border-radius: 50%;
-  background-color: #1369ce;
   position: absolute;
   bottom: 135%;
   right: 0;
   left: 0;
-  opacity: 0.9;
-  transform: scale(3);
-  transition: all 0.3s linear 0s;
 }
 
 .our-team:hover .university::before {
   height: 100%;
+  border-radius: 50%;
 }
 
 .our-team .university::after {
@@ -82,91 +83,19 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #1369ce;
+  background-color: white;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-}
-
-.our-team .university img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  transform: scale(1);
-  transition: all 0.9s ease 0s;
-}
-
-.our-team:hover .university img {
-  box-shadow: 0 0 0 14px #f7f5ec;
-  transform: scale(0.7);
-}
-
-.our-team .picture {
-  display: inline-block;
-  height: 300px;
-  width: 200px;
-  margin-bottom: 100px;
-  z-index: 1;
-  position: relative;
-}
-
-.our-team .picture::before {
-  content: "";
-  width: 100%;
-  height: 0;
-  border-radius: 50%;
-  background-color: #1369ce;
-  position: absolute;
-  bottom: 135%;
-  right: 0;
-  left: 0;
-  opacity: 0.9;
-  transform: scale(3);
-  transition: all 0.3s linear 0s;
-}
-
-.our-team:hover .picture::before {
-  height: 100%;
-}
-
-.our-team .picture::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #1369ce;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.our-team .picture img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  transform: scale(1);
-  transition: all 0.9s ease 0s;
-}
-
-.our-team:hover .picture img {
-  box-shadow: 0 0 0 14px #f7f5ec;
-  transform: scale(0.7);
-}
-
-.our-team .title {
-  display: block;
-  font-size: 15px;
-  color: #4e5052;
-  text-transform: capitalize;
+  z-index: -100;
 }
 
 .our-team .social {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #1369ce;
+  background-color: lightgray;
   position: absolute;
   bottom: -100px;
   left: 0;
@@ -193,6 +122,82 @@
 .our-team .social li a:hover {
   color: #1369ce;
   background-color: #f7f5ec;
+}
+
+.our-team .picture {
+  name: "";
+  display: inline-block;
+  height: 300px;
+  width: 200px;
+  margin-bottom: 100px;
+  z-index: 1;
+  border-radius: 50%;
+  position: relative;
+}
+
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+  z-index: -10000;
+}
+
+.our-team:hover .picture::before {
+  height: 100%;
+}
+
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+.our-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: black;
+  text-transform: capitalize;
+}
+.our-team .title3 {
+  display: block;
+  font-size: 15px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.our-team .title2 {
+  display: block;
+  font-size: 23px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.our-team .name {
+  font-size: 27px;
+  color: silver;
+  text-transform: capitalize;
 }
 
 .our-player {

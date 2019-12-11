@@ -4,7 +4,9 @@ import logo from './Tre_Jones.jpg';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { db } from "./fire"
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+
 
 class Players extends Component {
   constructor() {
@@ -12,12 +14,26 @@ class Players extends Component {
 
     this.state = {
       data: [],
+      players: [], 
       page: 0,
       rowsPerPage: 10
     };
   }
 
+  componentDidMount() {
+    db.collection("Athletes")
+      .get()
+      .then(querySnapshot => {
+        const data = querySnapshot.docs.map(doc => doc.data());
+        console.log(data);
+        this.setState({ players: data });
+      });
+
+  }
+
+
   render() {
+    const { players } = this.state;
     return (
       <div className="container">
         <div className="row">
@@ -34,14 +50,18 @@ class Players extends Component {
             image = { logo }
             title="Contemplative Reptile"
             />
+            {players.map(player=>(
             <CardContent className="team-content">
+            
               <Typography className="name" gutterBottom variant="h5" component="h2">
-              Tre Jones
+              {player.firstName} {player.lastName}
               </Typography>
               <Typography className="title" variant="body2" color="textSecondary" component="p">
-              Duke University Men's Basketball
+              {player.school} {player.sport}
               </Typography>
+   
             </CardContent>
+            ))}
           </CardActionArea>
           <CardActions className="social">
             <Button className="" size="small" color="primary">

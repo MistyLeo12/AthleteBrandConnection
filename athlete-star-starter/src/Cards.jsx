@@ -36,7 +36,6 @@ class Cards extends Component {
 
   render() {
     const { schools } = this.state;
-    var { images } = (`/pictures/schools/${schools.picture}.png`);
     console.log(schools.picture);
     return (
   
@@ -45,12 +44,6 @@ class Cards extends Component {
         {schools.map(school=>(
         <Card className="our-team">
           <CardActionArea className="university">
-            <CardMedia
-            component="img"
-            className = "img-fluid"
-            image = { images }
-            title="University Logo"
-            />
             <br />
             <CardContent className="team-content">
          

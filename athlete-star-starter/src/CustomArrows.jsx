@@ -4,6 +4,8 @@ import { Cards } from './Cards';
 import { Link } from 'react-router-dom';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import logo from './Duke-Basketball-logo.png';
+import { db } from "./fire"
+import {storageRef} from "./fire"
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -16,6 +18,7 @@ function SampleNextArrow(props) {
   );
 }
 
+
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -27,7 +30,28 @@ function SamplePrevArrow(props) {
   );
 }
 
+
 class CustomArrows extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      schools: [],
+      images: []
+    }
+  }
+
+  componentDidMount() {
+    db.collection("Schools")
+      .get()
+      .then(querySnapshot => {
+        const data = querySnapshot.docs.map(doc => doc.data());
+        console.log(data);
+        this.setState({ schools: data 
+        });
+      });
+  
+  }
   render() {
     const settings = {
       dots: true,
@@ -37,59 +61,48 @@ class CustomArrows extends Component {
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
     };
-    return (
+    const { schools } = this.state;
+   
+    return (  
       <div>
         <h2>University</h2>
         <SamplePrevArrow />
         <Slider {...settings}>
-          <div>
+        {schools.map(school=>(
+        <div key={0}>
             <Link to="/university">
             <Paper>
-        <Card className="our-team">
-          <CardActionArea className="university">
-            <CardMedia
-            component="img"
-            className = "img-fluid"
-            image = { logo }
-            title="University Logo"
-            />
+       
+        <Card className="our-team" > 
+          <CardActionArea className="university"  style ={{backgroundColor: school.color}}>
             <br />
-            <CardContent className="team-content">
-              <Typography className="name" gutterBottom variant="h5" component="h2">
-              Duke University
+            <CardContent className="" style ={{color: school.color}}>
+         
+            <Typography className="name" gutterBottom variant="h5" component="h2" >
+             
               </Typography>
-              <Typography className="title" variant="body2" color="textSecondary" component="p">
-              Duke University Athletics
-              </Typography>
+              <Typography className="title2" variant="body2" color="textSecondary" component="p">
+              {school.fullName}
+              </Typography> 
             </CardContent>
+       
           </CardActionArea>
           <CardActions className="social">
-            <Button className="" size="small" color="primary">
+            <Button className="" size="small" style ={{color: school.color}}>
             Share
             </Button>
             <Button size="small" color="primary">
             Open Profile
             </Button>
           </CardActions>
+
         </Card>
-      </Paper>
-            </Link>
-          </div>
-          <div>
-            2
-          </div>
-          <div>
-            3
-          </div>
-          <div>
-            <Cards />
-          </div>
-          <div>
-            <Cards />
-          </div>
-          <div>
-            <Cards />
-          </div>
+      
+          </Paper>
+          </Link>
+        </div>
+        ))}
+
         </Slider>
         <SampleNextArrow />
       </div>
