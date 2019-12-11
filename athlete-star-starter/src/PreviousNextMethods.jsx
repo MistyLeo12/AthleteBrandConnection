@@ -56,8 +56,8 @@ class PreviousNextMethods extends Component {
     const { players } = this.state;
 
     return (
-      <div>
-        <h2>Basketball</h2>
+      <div className="App">
+        <h2>Athletes</h2>
 
         <Slider ref={c => (this.slider = c)} {...settings}>
           {players.map(player => (
@@ -93,7 +93,7 @@ class PreviousNextMethods extends Component {
                           image={image2}
                         />
                       )}
-
+                      <Link to="/profile">
                       {player.firstName === "Tre" && (
                         <CardMedia
                           component="img"
@@ -103,6 +103,7 @@ class PreviousNextMethods extends Component {
                           image={logo}
                         />
                       )}
+                      </Link>
                       <CardContent className="team-content">
                         <Typography
                           className="name"
@@ -127,12 +128,6 @@ class PreviousNextMethods extends Component {
               </Link>
             </div>
           ))}
-          <div key={1}></div>
-          <div key={2}>3</div>
-          <div key={3}>4</div>
-          <div key={4}>
-            <h3>5</h3>
-          </div>
         </Slider>
         <br />
         <br />
@@ -144,6 +139,8 @@ class PreviousNextMethods extends Component {
           <button className="button" onClick={this.next}>
             Next
           </button>
+          <br />
+          <br />
         </div>
       </div>
     );

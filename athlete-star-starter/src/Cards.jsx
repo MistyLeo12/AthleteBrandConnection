@@ -56,14 +56,6 @@ class Cards extends Component {
             </CardContent>
        
           </CardActionArea>
-          <CardActions className="social">
-            <Button className="" size="small" color="primary">
-            Share
-            </Button>
-            <Button size="small" color="primary">
-            Open Profile
-            </Button>
-          </CardActions>
 
         </Card>
         ))}

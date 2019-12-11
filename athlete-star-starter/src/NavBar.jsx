@@ -71,7 +71,7 @@ class NavBar extends Component {
 
                 <ListItemText inset>
                     <TypoGraphy color="inherit" variant="title">
-                    <Button color="inherit" component={Link} to="/schools"> Schools </Button>
+                    <Button color="inherit" component={Link} to="/schools"> Universities </Button>
                     </TypoGraphy>
                 </ListItemText>
 

@@ -64,8 +64,8 @@ class CustomArrows extends Component {
     const { schools } = this.state;
    
     return (  
-      <div>
-        <h2>University</h2>
+      <div className="App">
+        <h2>Universities</h2>
         <SamplePrevArrow />
         <Slider {...settings}>
         {schools.map(school=>(
@@ -87,14 +87,6 @@ class CustomArrows extends Component {
             </CardContent>
        
           </CardActionArea>
-          <CardActions className="social">
-            <Button className="" size="small" style ={{color: school.color}}>
-            Share
-            </Button>
-            <Button size="small" color="primary">
-            Open Profile
-            </Button>
-          </CardActions>
 
         </Card>
       
