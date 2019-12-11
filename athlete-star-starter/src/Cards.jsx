@@ -4,7 +4,7 @@ import logo from './Duke-Basketball-logo.png';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { storage } from './fire'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import { db } from "./fire"
 
 class Cards extends Component {
@@ -36,7 +36,6 @@ class Cards extends Component {
 
   render() {
     const { schools } = this.state;
-    var { images } = (`/pictures/schools/${schools.picture}.png`);
     console.log(schools.picture);
     return (
   
@@ -45,12 +44,6 @@ class Cards extends Component {
         {schools.map(school=>(
         <Card className="our-team">
           <CardActionArea className="university">
-            <CardMedia
-            component="img"
-            className = "img-fluid"
-            image = { schools.picture }
-            title="University Logo"
-            />
             <br />
             <CardContent className="team-content">
          
