@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./Cassius_Stanley.jpg";
+import logo from "./Tre_Jones.jpg";
 // material-ui
 import { styled } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -56,7 +56,6 @@ class PlayerProfile extends Component {
       <React.Fragment>
       <div className="App">
         <div className="container">
-          <br />
           <Card className="our-player2">
             <CardActionArea className="person">
               <CardMedia
@@ -85,9 +84,9 @@ class PlayerProfile extends Component {
         </div>
         <br />
         <div>
-          <h2 className="Player">Cassius Stanley</h2>
+          <h2 className="Player">Tre Jones</h2>
           <p>
-            Cassius Jerome Stanley is an American college basketball player for
+            Tre Jones is an American college basketball player for
             the Duke Blue Devils of the Atlantic Coast Conference (ACC).
           </p>
           <MyButton> Shoutout: $50</MyButton>
@@ -96,6 +95,8 @@ class PlayerProfile extends Component {
           <br />
           <MyButton>Signed merchandise: $10-$80</MyButton>
         </div>
+        <br />
+        <br />
       </div>
       </React.Fragment>
     );
