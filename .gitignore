@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 
-athlete-star-starter/src/keys.js
+/athlete-star-starter/src/keys.js
+
 # dependencies
 /node_modules
 /.pnp
