@@ -58,7 +58,7 @@ class Soccer extends Component {
 
     return (
       <div>
-        <h2>Basketball</h2>
+        <h2>Soccer</h2>
 
         <Slider ref={c => (this.slider = c)} {...settings}>
           {players.map(player => (
