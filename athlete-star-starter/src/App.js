@@ -5,6 +5,7 @@ import { Cards } from "./Cards";
 import { CustomArrows } from "./CustomArrows";
 import { PreviousNextMethods } from "./PreviousNextMethods";
 import { Reviews } from "./Reviews.jsx";
+import { PlayerProfile } from './PlayerProfile';
 import "./App.css";
 
 export default class App extends Component {
@@ -12,9 +13,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <br />
-        <Reviews />
-
+        <CustomArrows />
         <br />
+        <PreviousNextMethods />
       </div>
     );
   }

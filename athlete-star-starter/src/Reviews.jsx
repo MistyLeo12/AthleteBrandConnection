@@ -77,6 +77,7 @@ class Reviews extends Component {
     const loadingSpin = this.state.loading ? "App-logo Spin" : "App-logo";
     return (
       <Fragment>
+        <div className="App">
         <div className="container">
           <Card className="our-player">
             <CardActionArea className="person">
@@ -103,6 +104,7 @@ class Reviews extends Component {
               comments={this.state.comments}
             />
           </div>
+        </div>
         </div>
       </Fragment>
     );
