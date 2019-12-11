@@ -87,7 +87,6 @@ class CustomArrows extends Component {
             </CardContent>
        
           </CardActionArea>
-
         </Card>
       
           </Paper>

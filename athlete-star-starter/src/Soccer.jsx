@@ -19,7 +19,7 @@ import logo from "./Tre_Jones.jpg";
 import { Link } from "react-router-dom";
 import { db } from "./fire";
 
-class PreviousNextMethods extends Component {
+class Soccer extends Component {
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);
@@ -31,7 +31,7 @@ class PreviousNextMethods extends Component {
     };
   }
   componentDidMount() {
-    db.collection("Athletes").where("sport", "==", "Basketball").limit(20)
+    db.collection("Athletes").where("sport", "==", "Soccer").limit(20)
       .get()
       .then(querySnapshot => {
         const data = querySnapshot.docs.map(doc => doc.data());
@@ -57,8 +57,8 @@ class PreviousNextMethods extends Component {
     const { players } = this.state;
 
     return (
-      <div className="App">
-        <h2>Athletes</h2>
+      <div>
+        <h2>Soccer</h2>
 
         <Slider ref={c => (this.slider = c)} {...settings}>
           {players.map(player => (
@@ -94,7 +94,7 @@ class PreviousNextMethods extends Component {
                           image={image2}
                         />
                       )}
-                      <Link to="/profile">
+
                       {player.firstName === "Tre" && (
                         <CardMedia
                           component="img"
@@ -104,7 +104,6 @@ class PreviousNextMethods extends Component {
                           image={logo}
                         />
                       )}
-                      </Link>
                       <CardContent className="team-content">
                         <Typography
                           className="name"
@@ -140,14 +139,12 @@ class PreviousNextMethods extends Component {
           <button className="button" onClick={this.next}>
             Next
           </button>
-          <br />
-          <br />
         </div>
       </div>
     );
   }
 }
 
-export default PreviousNextMethods;
+export default Soccer;
 
-export { PreviousNextMethods };
+export { Soccer };

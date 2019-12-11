@@ -19,7 +19,7 @@ import logo from "./Tre_Jones.jpg";
 import { Link } from "react-router-dom";
 import { db } from "./fire";
 
-class PreviousNextMethods extends Component {
+class Football extends Component {
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);
@@ -31,7 +31,7 @@ class PreviousNextMethods extends Component {
     };
   }
   componentDidMount() {
-    db.collection("Athletes").where("sport", "==", "Basketball").limit(20)
+    db.collection("Athletes").where("sport", "==", "Football")
       .get()
       .then(querySnapshot => {
         const data = querySnapshot.docs.map(doc => doc.data());
@@ -57,54 +57,17 @@ class PreviousNextMethods extends Component {
     const { players } = this.state;
 
     return (
-      <div className="App">
-        <h2>Athletes</h2>
+      <div>
+        <h2>Football</h2>
 
         <Slider ref={c => (this.slider = c)} {...settings}>
           {players.map(player => (
             <div key={0}>
-              <Link to="/athletes">
+              <Link>
                 <Paper>
                   <Card className="our-team">
                     <CardActionArea className="picture">
-                      {player.firstName !== "Tre" && (
-                        <CardMedia
-                          component="img"
-                          height="300px"
-                          maxWidth="50px"
-                          className="img-fluid"
-                          image=""
-                        />
-                      )}
-                      {player.firstName === "Haley" && (
-                        <CardMedia
-                          component="img"
-                          height="300px"
-                          maxWidth="50px"
-                          className="img-fluid"
-                          image={image}
-                        />
-                      )}
-                      {player.firstName === "Will" && (
-                        <CardMedia
-                          component="img"
-                          height="300px"
-                          maxWidth="50px"
-                          className="img-fluid"
-                          image={image2}
-                        />
-                      )}
-                      <Link to="/profile">
-                      {player.firstName === "Tre" && (
-                        <CardMedia
-                          component="img"
-                          height="300px"
-                          maxWidth="50px"
-                          className="img-fluid"
-                          image={logo}
-                        />
-                      )}
-                      </Link>
+                    
                       <CardContent className="team-content">
                         <Typography
                           className="name"
@@ -140,14 +103,12 @@ class PreviousNextMethods extends Component {
           <button className="button" onClick={this.next}>
             Next
           </button>
-          <br />
-          <br />
         </div>
       </div>
     );
   }
 }
 
-export default PreviousNextMethods;
+export default Football;
 
-export { PreviousNextMethods };
+export { Football };
