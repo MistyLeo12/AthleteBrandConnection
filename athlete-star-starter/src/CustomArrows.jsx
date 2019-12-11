@@ -52,9 +52,6 @@ class CustomArrows extends Component {
       });
   
   }
-
- 
-
   render() {
     const settings = {
       dots: true,
@@ -65,41 +62,33 @@ class CustomArrows extends Component {
       prevArrow: <SamplePrevArrow />
     };
     const { schools } = this.state;
-
    
-
-    return (
-      
+    return (  
       <div>
         <h2>University</h2>
         <SamplePrevArrow />
         <Slider {...settings}>
-          <div>
+        {schools.map(school=>(
+        <div key={0}>
             <Link to="/university">
             <Paper>
-        {schools.map(school=>(
-        <Card className="our-team">
-          <CardActionArea className="university">
-            <CardMedia
-            component="img"
-            className = "img-fluid"
-            image = { schools.picture }
-            title="University Logo"
-            />
+       
+        <Card className="our-team" > 
+          <CardActionArea className="university"  style ={{backgroundColor: school.color}}>
             <br />
-            <CardContent className="team-content">
+            <CardContent className="" style ={{color: school.color}}>
          
-            <Typography className="name" gutterBottom variant="h5" component="h2">
+            <Typography className="name" gutterBottom variant="h5" component="h2" >
              
               </Typography>
-              <Typography className="title" variant="body2" color="textSecondary" component="p">
+              <Typography className="title2" variant="body2" color="textSecondary" component="p">
               {school.fullName}
               </Typography> 
             </CardContent>
        
           </CardActionArea>
           <CardActions className="social">
-            <Button className="" size="small" color="primary">
+            <Button className="" size="small" style ={{color: school.color}}>
             Share
             </Button>
             <Button size="small" color="primary">
@@ -108,25 +97,12 @@ class CustomArrows extends Component {
           </CardActions>
 
         </Card>
+      
+          </Paper>
+          </Link>
+        </div>
         ))}
-      </Paper>
-            </Link>
-          </div>
-          <div>
-          <Cards />
-          </div>
-          <div>
-          <Cards />
-          </div>
-          <div>
-            <Cards />
-          </div>
-          <div>
-            <Cards />
-          </div>
-          <div>
-            <Cards />
-          </div>
+
         </Slider>
         <SampleNextArrow />
       </div>
