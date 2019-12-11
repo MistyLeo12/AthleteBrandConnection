@@ -10,17 +10,50 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import TypoGraphy from '@material-ui/core/Typography'
 import { Home, Book, AccountBox } from '@material-ui/icons'
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import logo from './ncaalogo.png'
+
+
+firebase.initializeApp({
+    apiKey: "AIzaSyDy1LlgOmltOLOjfsisTBWuKH9XrCfWMa4",
+    authDomain: "athlete-market.firebaseapp.com",
+    databaseURL: "https://athlete-market.firebaseio.com",
+    projectId: "athlete-market",
+    storageBucket: "athlete-market.appspot.com",
+    messagingSenderId: "370761758459",
+    appId: "1:370761758459:web:7e7a74d2d292b61ac6a25e",
+    measurementId: "G-QWJLD6YH8F"
+  });
+        
 import logo from './ncaalogo.png'
 
 class NavBar extends Component {
-    state = {
-    open: false,
-   };
+  state={isSignedIn: false }
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
+  }
 
+  componentDidMount = () => {
+
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({isSignedIn:!!user})
+      console.log("user", user)
+    })
+  }
    //Opening Side Handler
    handleDrawerOpen = () => {
      this.setState({ open: true });
    };
+
 
    //Closing Side Handler
     handleDrawerClose = () => {
@@ -46,7 +79,7 @@ class NavBar extends Component {
             <ListItem component="div" >
                 <ListItemText inset>
                     <TypoGraphy color="inherit" variant="title">
-                    <Button color="inherit" component={Link} to="/"> Home </Button>
+                    <Button color="inherit" component={Link} to="/home"> Home </Button>
                     </TypoGraphy>
                 </ListItemText>
 
@@ -64,7 +97,16 @@ class NavBar extends Component {
 
                 <ListItemText inset>
                     <TypoGraphy color="inherit" variant="title">
+                    {this.state.isSignedIn ?
+
+                    <Button color="inherit" onClick={() => {firebase.auth().signOut(); this.forceUpdate()}} component={Link} to="/">Sign Out</Button>
+
+
+                      :
+
                     <Button color="inherit" component={Link} to="/">Login</Button>
+
+                    }
                     </TypoGraphy>
                 </ListItemText>
             </ListItem >
