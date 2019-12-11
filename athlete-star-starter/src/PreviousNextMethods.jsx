@@ -62,8 +62,7 @@ class PreviousNextMethods extends Component {
                   height="300px"
                   maxWidth="50px"
                   className = "img-fluid"
-                  image = { logo }
-                  title="Contemplative Reptile"
+                  image = { logo } 
                   />
                    
                   <CardContent className="team-content">
