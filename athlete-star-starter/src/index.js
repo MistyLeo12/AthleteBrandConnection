@@ -18,10 +18,10 @@ const routing = (
   <div>
     <NavBar />
     <Switch>
-        <Route exact path='/' component={App} />
+        <Route exact path='/' component={Login} />
+        <Route path='/home' component={App} />
         <Route path='/schools' component={CustomArrows} />
         <Route path='/athletes' component={PreviousNextMethods} />
-        <Route path='/login' component={Login} />
         <Route path='/university' component={UniversityPage} />
     </Switch>
   </div>

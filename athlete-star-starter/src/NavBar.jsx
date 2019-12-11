@@ -78,7 +78,7 @@ class NavBar extends Component {
             <ListItem component="div" >
                 <ListItemText inset>
                     <TypoGraphy color="inherit" variant="title">
-                    <Button color="inherit" component={Link} to="/"> Home </Button>
+                    <Button color="inherit" component={Link} to="/home"> Home </Button>
                     </TypoGraphy>
                 </ListItemText>
 
@@ -98,12 +98,12 @@ class NavBar extends Component {
                     <TypoGraphy color="inherit" variant="title">
                     {this.state.isSignedIn ?
 
-                    <Button color="inherit" onClick={() => {firebase.auth().signOut(); this.forceUpdate()}} component={Link} to="/login">Sign Out</Button>
+                    <Button color="inherit" onClick={() => {firebase.auth().signOut(); this.forceUpdate()}} component={Link} to="/">Sign Out</Button>
 
 
                       :
 
-                    <Button color="inherit" component={Link} to="/login">Login</Button>
+                    <Button color="inherit" component={Link} to="/">Login</Button>
 
                     }
                     </TypoGraphy>
