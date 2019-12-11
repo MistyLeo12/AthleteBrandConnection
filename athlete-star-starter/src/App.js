@@ -4,6 +4,8 @@ import { NavBar } from './NavBar';
 import { Cards } from './Cards';
 import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
+import { Soccer } from './Soccer';
+import { Football } from './football';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import firebase from 'firebase'
@@ -19,7 +21,10 @@ export default class App extends Component <Props> {
         <CustomArrows />
         <br />
         <PreviousNextMethods />
-        
+        <br />
+        <Soccer />
+        <br />
+        <Football />
         <br />
       </div>
     );
