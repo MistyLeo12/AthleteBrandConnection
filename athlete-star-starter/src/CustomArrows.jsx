@@ -87,15 +87,7 @@ class CustomArrows extends Component {
             </CardContent>
        
           </CardActionArea>
-          <CardActions className="social">
-            <Button className="" size="small" style ={{color: school.color}}>
-            Share
-            </Button>
-            <Button size="small" color="primary">
-            Open Profile
-            </Button>
-          </CardActions>
-
+    
         </Card>
       
           </Paper>
