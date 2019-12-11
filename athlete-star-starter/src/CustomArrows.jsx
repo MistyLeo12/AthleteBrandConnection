@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Cards } from './Cards';
 import { Link } from 'react-router-dom';
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
-import logo from './Duke-Basketball-logo.png';
+import logo from './pictures/Duke-Basketball-logo.png';
 import { db } from "./fire"
 import {storageRef} from "./fire"
 

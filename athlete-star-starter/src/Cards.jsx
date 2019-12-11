@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './Duke-Basketball-logo.png';
+import logo from './pictures/Duke-Basketball-logo.png';
 // material-ui
 import { Paper, Image, Typography, Button, Card, CardActions, CardMedia, CardActionArea, CardContent } from '@material-ui/core/';
 import PropTypes from 'prop-types';

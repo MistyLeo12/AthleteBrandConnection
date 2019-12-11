@@ -7,6 +7,7 @@ import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
 import { Soccer } from './Soccer';
 import { Football } from './football';
+import { UNC } from './UNC';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import firebase from 'firebase'
