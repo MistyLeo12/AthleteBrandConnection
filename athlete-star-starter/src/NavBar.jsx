@@ -25,7 +25,8 @@ firebase.initializeApp({
     appId: "1:370761758459:web:7e7a74d2d292b61ac6a25e",
     measurementId: "G-QWJLD6YH8F"
   });
-
+        
+import logo from './ncaalogo.png'
 
 class NavBar extends Component {
   state={isSignedIn: false }

@@ -4,6 +4,8 @@ import { NavBar } from "./NavBar";
 import { Cards } from "./Cards";
 import { CustomArrows } from "./CustomArrows";
 import { PreviousNextMethods } from "./PreviousNextMethods";
+import { Reviews } from "./Reviews.jsx";
+import { PlayerProfile } from './PlayerProfile';
 import "./App.css";
 
 export default class App extends Component {

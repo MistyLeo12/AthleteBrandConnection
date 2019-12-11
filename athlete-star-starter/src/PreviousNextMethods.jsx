@@ -34,7 +34,7 @@ class PreviousNextMethods extends Component {
         <h2>Basketball</h2>
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
-            <Link to="/athletes">
+            <Link to="/profile">
             <Paper>
               <Card className="our-team">
                 <CardActionArea className="picture">

@@ -9,6 +9,8 @@ import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
 import { UniversityPage } from './UniversityPage';
 import { Login } from './Login';
+import { PlayerProfile } from './PlayerProfile';
+import { Reviews } from './Reviews';
 import * as serviceWorker from './serviceWorker';
 
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
@@ -23,6 +25,8 @@ const routing = (
         <Route path='/schools' component={CustomArrows} />
         <Route path='/athletes' component={PreviousNextMethods} />
         <Route path='/university' component={UniversityPage} />
+        <Route path='/profile' component={PlayerProfile} />
+        <Route path='/review' component={Reviews} />
     </Switch>
   </div>
 </Router>
