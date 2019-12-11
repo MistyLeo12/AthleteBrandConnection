@@ -8,6 +8,7 @@ import { NavBar } from './NavBar';
 import { CustomArrows } from './CustomArrows';
 import { PreviousNextMethods } from './PreviousNextMethods';
 import { UniversityPage } from './UniversityPage';
+import { Login } from './Login';
 import * as serviceWorker from './serviceWorker';
 
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
@@ -20,6 +21,7 @@ const routing = (
         <Route exact path='/' component={App} />
         <Route path='/schools' component={CustomArrows} />
         <Route path='/athletes' component={PreviousNextMethods} />
+        <Route path='/login' component={Login} />
         <Route path='/university' component={UniversityPage} />
     </Switch>
   </div>
