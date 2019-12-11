@@ -51,24 +51,47 @@ export default class CommentForm extends Component {
     let { comment } = this.state;
     var athleteid = db
       .collection("Reviews")
-      .where("athleteName", "==", "Jack White")
-      .get();
-    athleteid.then(function(result) {
-      db.collection("Reviews")
-        .doc(result.docs[0])
-        .collection("review")
-        .add({
-          name: comment.name,
-          content: comment.message,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
-        .then(function(docRef) {
-          console.log("Document written with ID:", docRef.id);
-        })
-        .catch(function(error) {
-          console.error("Error adding document:", error);
-        });
+      .where("athleteName", "==", "Tre Jones");
+    athleteid.get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        db.collection("Reviews")
+          .doc(doc.id)
+          .collection("review")
+          .add({
+            name: comment.name,
+            content: comment.message,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          })
+          .then(function(docRef) {
+            console.log("Document written with ID:", docRef.id);
+          })
+          .catch(function(error) {
+            console.error("Error adding document:", error);
+          });
+      });
     });
+
+    //comment.time = firebase.firestore.FieldValue.serverTimestamp();
+    console.log(comment);
+    //this.props.addComment(comment);
+
+    // athleteid.then(function(result) {
+    //   db.collection("Reviews")
+    //     .doc(result.docs[0])
+    //     .collection("review")
+    //     .add({
+    //       name: comment.name,
+    //       content: comment.message,
+    //       timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    //     })
+    //     .then(function(docRef) {
+    //       console.log("Document written with ID:", docRef.id);
+    //     })
+    //     .catch(function(error) {
+    //       console.error("Error adding document:", error);
+    //     });
+    // });
+
     // (async function() {
     //   var result = await athleteid;
     //   console.log("Woo done!", result);
