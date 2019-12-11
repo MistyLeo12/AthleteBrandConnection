@@ -51,11 +51,11 @@ export default class CommentForm extends Component {
     let { comment } = this.state;
     var athleteid = db
       .collection("Reviews")
-      .where("athleteReference", "==", "Jack White")
+      .where("athleteName", "==", "Jack White")
       .get();
     athleteid.then(function(result) {
       db.collection("Reviews")
-        .doc(result)
+        .doc(result.docs[0])
         .collection("review")
         .add({
           name: comment.name,

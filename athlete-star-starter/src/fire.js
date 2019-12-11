@@ -1,4 +1,5 @@
 import firebase from "firebase";
+
 firebase.initializeApp({
   apiKey: "AIzaSyDy1LlgOmltOLOjfsisTBWuKH9XrCfWMa4",
   authDomain: "athlete-market.firebaseapp.com",
@@ -11,5 +12,4 @@ firebase.initializeApp({
 });
 
 const db = firebase.firestore();
-
 export { db };
