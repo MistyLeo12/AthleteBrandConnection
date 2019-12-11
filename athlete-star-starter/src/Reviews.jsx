@@ -28,7 +28,8 @@ class Reviews extends Component {
     this.state = {
       comments: [],
       list: [],
-      loading: false
+      loading: false,
+      athlete: "Tre Jones"
     };
 
     this.addComment = this.addComment.bind(this);
@@ -42,7 +43,7 @@ class Reviews extends Component {
 
     // get all the comments
     db.collection("Reviews")
-      .where("athleteName", "==", "Tre Jones")
+      .where("athleteName", "==", this.state.athlete)
       .get()
       .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -58,16 +59,6 @@ class Reviews extends Component {
                 return doc;
               });
             });
-
-          // .then(function(querySnapshot) {
-          //   querySnapshot.forEach(function(doc) {
-          //     console.log(doc.id, "=>", doc.data);
-
-          //     oldreview.push(doc.data);
-          //   });
-          // });
-          // doc.data() is never undefined for query doc snapshots
-          //console.log(doc.ref.parent, " => ", doc.data);
         });
       })
       .catch(function(error) {
@@ -77,30 +68,6 @@ class Reviews extends Component {
       comments: oldreview,
       loading: false
     });
-    // console.log(oldreview);
-
-    // db.collection("Reviews")
-    //   .doc(docuID)
-    //   .collection("review")
-    //   .get.then(function(querySnapshot) {
-    //     querySnapshot.forEach(function(doc) {
-    //       console.log(doc);
-    //       var oldreview = [];
-    //       oldreview.push();
-    //     });
-    //   });
-
-    // fetch("http://localhost:7777")
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     this.setState({
-    //       comments: res,
-    //       loading: false
-    //     });
-    //   })
-    //   .catch(err => {
-    //     this.setState({ loading: false });
-    //   });
   }
 
   /**
