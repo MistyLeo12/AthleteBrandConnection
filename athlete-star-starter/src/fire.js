@@ -1,7 +1,8 @@
 import firebase from "firebase";
+import firebasekey from "./keys";
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDy1LlgOmltOLOjfsisTBWuKH9XrCfWMa4",
+    apiKey: firebasekey,
     authDomain: "athlete-market.firebaseapp.com",
     databaseURL: "https://athlete-market.firebaseio.com",
     projectId: "athlete-market",
